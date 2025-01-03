@@ -1,7 +1,7 @@
 <?php
 const HOST = 'localhost';
-const USERNAME = 'root';
-const PASSWORD = '';
+const USERNAME = 'usertodo';
+const PASSWORD = 'my@Pny@1234';
 const DBNAME = 'todo';
 $dbcon = new mysqli(HOST, USERNAME, PASSWORD, DBNAME);
 
