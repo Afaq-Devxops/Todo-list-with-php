@@ -23,10 +23,10 @@ jobs:
         script: |
           # Navigate to the existing application directory
           cd /var/www/html/Todo-list-with-php 
-          sudo rm -rf Todo-list-with-php 
+          #sudo rm -rf Todo-list-with-php 
 
           # Pull the latest code from the repository
-          sudo git clone https://github.com/Afaq-Devxops/Todo-list-with-php.git .
+          #sudo git clone https://github.com/Afaq-Devxops/Todo-list-with-php.git .
           git reset --hard
           git pull origin master
 
