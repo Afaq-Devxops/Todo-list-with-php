@@ -43,5 +43,5 @@ jobs:
         username: ubuntu
         key: ${{ secrets.EC2_SSH_KEY }}
         port: 22
-        source: distfiles/*
+        source: /*
         target: /var/www/html/Todo-list-with-php
