@@ -1,0 +1,38 @@
+name: Update Application Code on EC2
+
+on:
+#  push:
+  workflow_dispatch:
+#    branches:
+#      - master # Adjust branch as needed
+
+jobs:
+  update-code:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Update Code on EC2
+      uses: appleboy/ssh-action@v1.2.0
+      with:
+        host: ${{ secrets.EC2_PUBLIC_IP }}
+        username: ubuntu
+        key: ${{ secrets.EC2_SSH_KEY }}
+        port: 22
+        script: |
+          # Navigate to the existing application directory
+          cd /var/www/html/Todo-list-with-php 
+          #sudo rm -rf Todo-list-with-php 
+
+          # Pull the latest code from the repository
+          #sudo git clone https://github.com/Afaq-Devxops/Todo-list-with-php.git .
+          sudo git reset --hard
+          sudo git pull origin master
+
+          # Ensure permissions are correct
+          sudo chmod -R 755 /var/www/html/Todo-list-with-php
+
+          # Restart Apache to apply changes
+          #sudo systemctl restart apache2
