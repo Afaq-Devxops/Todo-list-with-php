@@ -22,8 +22,8 @@ jobs:
         port: 22
         script: |
           # Navigate to the existing application directory
-          sudo cd /var/www/html/Todo-list-with-php 
-          sudo mkdir Todo-list-with-php 
+          cd /var/www/html/Todo-list-with-php 
+          mkdir Todo-list-with-php 
 
           # Pull the latest code from the repository
           #git clone https://github.com/Afaq-Devxops/Todo-list-with-php.git .
@@ -31,7 +31,7 @@ jobs:
           #git pull origin master
 
           # Ensure permissions are correct
-          #sudo chmod -R 755 /var/www/html/Todo-list-with-php
+          sudo chmod -R 755 /var/www/html/Todo-list-with-php
 
           # Restart Apache to apply changes
           #sudo systemctl restart apache2
