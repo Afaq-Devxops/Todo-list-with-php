@@ -1,9 +1,10 @@
 name: Update Application Code on EC2
 
 on:
-  push:
-    branches:
-      - master # Adjust branch as needed
+#  push:
+  workflow_dispatch:
+#    branches:
+#      - master # Adjust branch as needed
 
 jobs:
   update-code:
