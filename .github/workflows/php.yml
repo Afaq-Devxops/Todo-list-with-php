@@ -27,8 +27,8 @@ jobs:
 
           # Pull the latest code from the repository
           #sudo git clone https://github.com/Afaq-Devxops/Todo-list-with-php.git .
-          git reset --hard
-          git pull origin master
+          sudo git reset --hard
+          sudo git pull origin master
 
           # Ensure permissions are correct
           sudo chmod -R 755 /var/www/html/Todo-list-with-php
